@@ -41,6 +41,11 @@
     chdir: /opt/freepbx
     cmd: fwconsole ma upgradeall
 
+- name: Enable pm2
+  shell:
+    chdir: /opt/freepbx
+    cmd: fwconsole ma enable pm2    
+
 - name: Install module reload
   shell:
     chdir: /opt/freepbx

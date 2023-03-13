@@ -1,4 +1,4 @@
-FROM code-dal1.penguintech.group:5050/ptg/standards/docker-ansible-image:stable
+FROM ghcr.io/penguincloud/core:v5.0.0 AS BUILD
 LABEL company="Penguin Tech Group LLC"
 LABEL org.opencontainers.image.authors="info@penguintech.group"
 LABEL license="GNU AGPL3"
@@ -8,13 +8,13 @@ COPY . /opt/manager/
 WORKDIR /opt/manager
 
 # UPDATE as needed
-RUN apt update && apt dist-upgrade -y && apt auto-remove -y && apt clean -y
+# RUN apt update && apt dist-upgrade -y && apt auto-remove -y && apt clean -y
 
 # PUT YER ARGS in here
 ARG APP_TITLE="FreePbx"
 ARG ASTERISK_LINK="https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz"
 ARG ASTERISK_VERSION="asterisk-18-current"
-ARG ASTERISK_VER="asterisk-18.16.0"
+ARG ASTERISK_VER="asterisk-18.17.0"
 ARG ITUT="011"
 ARG FREEPBX_LINK="http://mirror.freepbx.org/modules/packages/freepbx/7.4/freepbx-16.0-latest.tgz"
 ARG FREEPBX_VERSION="freepbx-16.0-latest"

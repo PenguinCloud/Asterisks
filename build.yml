@@ -4,9 +4,6 @@
   gather_facts: no
   vars_files:
     - vars/base.yml
-  become: yes
-  become_user: root
-  remote_user: root
   tasks:
     - name: Include nodeType variables
       include_vars:

@@ -1,8 +1,7 @@
 ---
 - name: Add PPA to the system
   shell: "curl -sL {{ nodejs_link }} | sudo -E bash -"
-  args:
-    warn: false
+  ignore_errors: true 
 
 - name: Install node js
   apt:
